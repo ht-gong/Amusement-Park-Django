@@ -1,0 +1,220 @@
+<!doctype html>
+
+{% load static %}
+
+<!--<link rel="stylesheet" type="text/css" href="{% static 'SystemSite/style.css' %}" xmlns="http://www.w3.org/1999/html">-->
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../static/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="../../static/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/libs/css/style.css">
+    <link rel="stylesheet" href="../../static/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="../../static/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="../../static/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="../../static/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../static/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="../../static/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <title>APMS - a DB that is easy to manipulate</title>
+</head>
+
+<body>
+    <body>
+        <!-- ============================================================== -->
+        <!-- main wrapper -->
+        <!-- ============================================================== -->
+        <div class="dashboard-main-wrapper">
+            <!-- ============================================================== -->
+            <!-- navbar -->
+            <!-- ============================================================== -->
+            <div class="dashboard-header">
+                <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                    <a class="navbar-brand" href="../">APMS</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto navbar-right-top">
+                            </li>
+                            <li class="nav-item dropdown nav-user">
+                                <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../static/images/developers.png" alt="" class="user-avatar-md rounded-circle"></a>
+                                <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                    <div class="nav-user-info">
+                                        <h5 class="mb-0 text-white nav-user-name">Jack & Felix & Beren</h5>
+                                        <span class="status"></span><span class="ml-2">Developed by</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h1 class="pageheader-title">Deletion</h1>
+                                <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="ecommerce-widget">
+
+
+                    <div class="row">
+                            <!-- Tourist List -->
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Arcade List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if arcade_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Arcade Name</th>
+                                                        <th class="border-0">Location</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for arcade in arcade_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{arcade.0}}</td>
+                                                        <td>{{arcade.1}}</td>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No arcades found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Insertion -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Delete an arcade</h5>
+                                <div class="card-body">
+                                    <form action="./"  method="post">
+                                        {% csrf_token %}
+                                        <table>
+                                            {{formA.as_table}}
+                                        </table>
+                                        </div>
+                                            <div class="col-sm-6 pl-3">
+                                                <p>
+                                                    <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Machine List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if machine_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Arcade Name</th>
+                                                        <th class="border-0">Machine Name</th>
+                                                        <th class="border-0">Type</th>
+                                                        <th class="border-0">Highscores</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for machine in machine_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{machine.0}}</td>
+                                                        <td>{{machine.1}}</td>
+                                                        <td>{{machine.2}}</td>
+                                                        <td>{{machine.3}}</td>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No machines found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <!-- ============================================================== -->
+                            <!-- end recent orders  -->
+                        <!-- Insertion -->
+                        <!-- ============================================================== -->
+                        <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Delete a machine</h5>
+                                <div class="card-body">
+                                    <form action="./"  method="post">
+                                        {% csrf_token %}
+                                        <table>
+                                            {{formM.as_table}}
+                                        </table>
+                                        </div>
+                                            <div class="col-sm-6 pl-3">
+                                                <p>
+                                                    <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="../../static/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="../../static/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="../../static/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="../../static/libs/js/main-js.js"></script>
+    <!-- chart chartist js -->
+    <script src="../../static/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <!-- sparkline js -->
+    <script src="../../static/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <!-- morris js -->
+    <script src="../../static/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="../../static/vendor/charts/morris-bundle/morris.js"></script>
+    <!-- chart c3 js -->
+    <script src="../../static/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="../../static/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="../../static/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script src="../../static/libs/js/dashboard-ecommerce.js"></script>
+
+
+</div>
+</body>

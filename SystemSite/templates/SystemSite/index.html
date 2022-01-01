@@ -1,0 +1,1002 @@
+<!doctype html>
+{% load static%}
+<html lang="en">
+ 
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../static/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="../../static/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/libs/css/style.css">
+    <link rel="stylesheet" href="../../static/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="../../static/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="../../static/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="../../static/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../static/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="../../static/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <title>APMS - a DB that is easy to manipulate</title>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="">APMS</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        </li>
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../static/images/developers.png" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">Jack & Felix & Beren</h5>
+                                    <span class="status"></span><span class="ml-2">Developed by</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Query</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Query <span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="insertion.html">Insertion</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="deletion.html">Deletion</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="update.html">Update</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="selection.html">Selection</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="projection.html">Projection</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="join.html">Join</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Aggregation</a>
+                                            <div id="submenu-1-1" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="agroupby.html">Group By</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="aggregation_having.html">Having</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="nested_aggregation.html">Nested Aggregation</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="division.html">Division</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tables</a>
+                                <div id="submenu-5" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#touristList">Tourist List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#staffList">Staff List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#arcadeHasGiftList">Gifts in Arcades</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#cashierWorkAtList">Cashier List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#equipmentList">Equipment List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#gift1List">Gift List 1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#gift2List">Gift List 2</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#machineList">Machine List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#opop1List">Operator List 1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#opop2List">Operator List 2</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#redeemsList">Redeems List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#rideMaintainList">Ride Maintaining Log</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#techniciansList">Technician List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#ticket1List">Ticket List 1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#ticket2List">Ticket List 2</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#ticketrideList">Ticket For Ride List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#tbtList">Tourist Buys Ticket List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#tpmList">Tourist Plays Machine List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#usesList">Technician Equipment List</a>
+                                        </li>
+                                        <li class = "nav-item">
+                                            <a class = "nav-link" href="#arcadeList">Arcade List</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h1 class="pageheader-title">Amusement Park Management System</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="ecommerce-widget">
+
+                        <!-- System Statistics  -->
+                        <div class="row">
+
+                            <!-- Tourist Number  -->
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                <div class="card border-3 border-top border-top-primary">
+                                    {% if tourist_list %}
+                                    <div class="card-body">
+                                        <h5 class="text-muted">Tourist Number</h5>
+                                        <div class="metric-value d-inline-block">
+                                            <h1 class="mb-1">{{tourist_count}}</h1>
+                                            {% else %}
+                                            <h1>No tourists found.</h1>
+                                            {% endif %}
+                                        </div>
+<!--                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">-->
+<!--                                            <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">5.86%</span>-->
+<!--                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Staff Number  -->
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                <div class="card border-3 border-top border-top-primary">
+                                    {% if tourist_list %}
+                                    <div class="card-body">
+                                        <h5 class="text-muted">Staff Number</h5>
+                                        <div class="metric-value d-inline-block">
+                                            <h1 class="mb-1">{{staff_count}}</h1>
+                                            {% else %}
+                                            <h1>No staff found.</h1>
+                                            {% endif %}
+                                        </div>
+<!--                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">-->
+<!--                                            <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ml-1">10%</span>-->
+<!--                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gift Redeemed -->
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                <div class="card border-3 border-top border-top-primary">
+                                    {% if redeems_list %}
+                                    <div class="card-body">
+                                        <h5 class="text-muted">Redeemed Gifts</h5>
+                                        <div class="metric-value d-inline-block">
+                                            <h1 class="mb-1">{{redeem_count}}</h1>
+                                            {% else %}
+                                            <h1>No redeems found.</h1>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Ride Number-->
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                <div class="card border-3 border-top border-top-primary">
+                                    {% if rideMaintains_list %}
+                                    <div class="card-body">
+                                        <h5 class="text-muted">Rides</h5>
+                                        <div class="metric-value d-inline-block">
+                                            <h1 class="mb-1">{{ride_count}}</h1>
+                                            {% else %}
+                                            <h1>No rides found.</h1>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Tourist List -->
+                        <div class="row" id="touristList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Tourist List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if tourist_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">ID</th>
+                                                        <th class="border-0">Name</th>
+                                                        <th class="border-0">Age </th>
+                                                        <th class="border-0">Arcade Points</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                {% for tourist in tourist_list %}
+                                                    <tr>
+                                                        <td>{{tourist.0}}</td>
+                                                        <td>{{tourist.1}}</td>
+                                                        <td>{{tourist.2}}</td>
+                                                        <td>{{tourist.3}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No tourists found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Staff List -->
+                        <div class="row" id="staffList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Staff List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if staff_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">WorkID</th>
+                                                        <th class="border-0">Name</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for staff in staff_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{staff.0}}</td>
+                                                        <td>{{staff.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No staff found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Archade Has Gift List-->
+                        <div class="row" id="arcadeHasGiftList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Gift in Arcades</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if arcade_gift_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Arcade Name</th>
+                                                        <th class="border-0">Gift ID</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for agl in arcade_gift_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{agl.0}}</td>
+                                                        <td>{{agl.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No result found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cashier List -->
+                        <div class="row" id="cashierWorkAtList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Cashier in Arcades</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if cashier_worksat_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Work ID</th>
+                                                        <th class="border-0">Arcade Name</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for cwl in cashier_worksat_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{cwl.0}}</td>
+                                                        <td>{{cwl.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No result found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Equipment List -->
+                        <div class="row" id="equipmentList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Equipments</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if equipment_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">ID</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for eq in equipment_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{eq.0}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No equipments found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gift List 1 -->
+                        <div class="row" id="gift1List">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Gift 1</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if gift1_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Gift ID</th>
+                                                        <th class="border-0">Category</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for gift in gift1_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{gift.0}}</td>
+                                                        <td>{{gift.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No gift found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gift List 2 -->
+                        <div class="row" id="gift2List">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Gift 2</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if gift2_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Category</th>
+                                                        <th class="border-0">Points Required</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for gift in gift2_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{gift.0}}</td>
+                                                        <td>{{gift.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No gift found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Machine List-->
+                        <div class="row" id="machineList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Machine List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if machine_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Arcade Name</th>
+                                                        <th class="border-0">Machine Name</th>
+                                                        <th class="border-0">Type</th>
+                                                        <th class="border-0">Highscores</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for machine in machine_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{machine.0}}</td>
+                                                        <td>{{machine.1}}</td>
+                                                        <td>{{machine.2}}</td>
+                                                        <td>{{machine.3}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No gift found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Operator List 1-->
+                        <div class="row" id="opop1List">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Operator List 1</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if opop1_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Work ID</th>
+                                                        <th class="border-0">Qualification</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for op in opop1_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{op.0}}</td>
+                                                        <td>{{op.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No operator found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Operator List 2 -->
+                        <div class="row" id="opop2List">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Operator List 2</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if opop2_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Qualification</th>
+                                                        <th class="border-0">Ride Name</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for op in opop2_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{op.0}}</td>
+                                                        <td>{{op.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No operator found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Redeems List -->
+                        <div class="row" id="redeemsList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Redeems List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if redeems_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Gift ID</th>
+                                                        <th class="border-0">Tourist ID</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for redeem in redeems_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{redeem.0}}</td>
+                                                        <td>{{redeem.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No result found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ride Maintains List -->
+                        <div class="row" id="rideMaintainList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Ride Maintaining Log</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if rideMaintains_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Ride Name</th>
+                                                        <th class="border-0">Passenger Limit</th>
+                                                        <th class="border-0">Work ID</th>
+                                                        <th class="border-0">Equipment ID</th>
+                                                        <th class="border-0">Time of Inspection</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for rm in rideMaintains_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{rm.0}}</td>
+                                                        <td>{{rm.1}}</td>
+                                                        <td>{{rm.2}}</td>
+                                                        <td>{{rm.3}}</td>
+                                                        <td>{{rm.4}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No result found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technician List -->
+                        <div class="row" id="techniciansList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Technician List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if technician_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Work ID</th>
+                                                        <th class="border-0">Qualification</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for technician in technician_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{technician.0}}</td>
+                                                        <td>{{technician.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No technicians found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ticket List 1 -->
+                        <div class="row" id="ticket1List">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Ticket List 1</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if ticket1_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Ticket Number</th>
+                                                        <th class="border-0">Type</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for ticket in ticket1_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{ticket.0}}</td>
+                                                        <td>{{ticket.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No tickets found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ticket List 2 -->
+                        <div class="row" id="ticket2List">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Ticket List 2</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if ticket2_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Type</th>
+                                                        <th class="border-0">Price</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for ticket in ticket2_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{ticket.0}}</td>
+                                                        <td>{{ticket.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No tickets found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ticket For Ride -->
+                        <div class="row" id="ticketrideList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Ticket For Ride List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if ticketforride_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Ticket Number</th>
+                                                        <th class="border-0">Ride Name</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for tfr in ticketforride_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{tfr.0}}</td>
+                                                        <td>{{tfr.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No tickets found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tourist Buys Ticket -->
+                        <div class="row" id="tbtList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Tourist Buys Ticket List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if tbt_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Tourist ID</th>
+                                                        <th class="border-0">Ticket Number</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for tbt in tbt_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{tbt.0}}</td>
+                                                        <td>{{tbt.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No result found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tourist Plays Machine -->
+                        <div class="row" id="tpmList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Tourist Plays Machine List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if tpm_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Tourist ID</th>
+                                                        <th class="border-0">Arcade Name</th>
+                                                        <th class="border-0">Machine Name</th>
+                                                        <th class="border-0">Points Earned</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for tpm in tpm_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{tpm.0}}</td>
+                                                        <td>{{tpm.1}}</td>
+                                                        <td>{{tpm.2}}</td>
+                                                        <td>{{tpm.3}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No result found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Uses List -->
+                        <div class="row" id="usesList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Technician Uses Equipment List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if uses_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Work ID</th>
+                                                        <th class="border-0">Equipment ID</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for use in uses_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{use.0}}</td>
+                                                        <td>{{use.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No result found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Arcade -->
+                        <div class="row" id="arcadeList">
+                            <div class="col-xl-9 col-lg-12 col-md-6 col-sm-12 col-12">
+                                <div class="card">
+                                    <h5 class="card-header">Arcade List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                {% if uses_list %}
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">Arcade Name</th>
+                                                        <th class="border-0">Location</th>
+                                                    </tr>
+                                                </thead>
+                                                {% for arcade in arcade_list %}
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{arcade.0}}</td>
+                                                        <td>{{arcade.1}}</td>
+                                                    </tr>
+                                                </tbody>
+                                                {% endfor %}
+                                            </table>
+                                            {% else %}
+                                            <p>No result found.</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1 -->
+    <script src="../../static/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="../../static/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="../../static/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="../../static/libs/js/main-js.js"></script>
+    <!-- chart chartist js -->
+    <script src="../../static/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <!-- sparkline js -->
+    <script src="../../static/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <!-- morris js -->
+    <script src="../../static/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="../../static/vendor/charts/morris-bundle/morris.js"></script>
+    <!-- chart c3 js -->
+    <script src="../../static/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="../../static/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="../../static/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script src="../../static/libs/js/dashboard-ecommerce.js"></script>
+</body>
+ 
+</html>
